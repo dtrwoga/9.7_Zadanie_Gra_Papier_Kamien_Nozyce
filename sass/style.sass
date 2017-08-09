@@ -1,0 +1,145 @@
+
+$primary-font-family: 'Raleway', sans-serif
+$secondary-font-family: 'Archivo Black', sans-serif
+$colorWhite: #fff
+$colorGrey: #dce2ee
+$colorDarkGrey: #333
+$colorBlue: #5bc0de
+$colorRed: #d9534f
+$colorDarkBlue: #022e55
+
+
+
+body
+	background-image: url("imgStart.gif")
+	background-repeat: no-repeat
+	background-color: $colorGrey
+	text-align: center
+	background-position: bottom center
+	//background-size: 40%
+	
+
+/*grid*/	
+
+.row:before,
+.row:after 
+	content: ""
+	display: table
+	clear: both
+	
+@for $i from 1 through 12
+	.col-xs-#{$i}
+		width: 100% / 12 * $i
+
+[class*="col-"] 
+	float: left
+	min-height: 1px
+	padding: 10px
+	position: relative
+	text-align: center
+
+.label
+	margin-left: 20px
+	margin-right: 20px
+	padding: 10px
+	font-size: 18px
+	color: $colorWhite
+	font-weight: 700
+	border-radius: 5%
+	display: inline-block
+	width: 100px
+	margin-botom: 10px
+
+.row
+	.resultWindow
+		max-width: 100%
+		width: 200px
+		height: 200px
+		background-color: $colorDarkGrey
+		box-shadow: 3px 6px 12px 2px rgba(0, 0, 0, 0.7)
+		padding: 5% 0 
+		margin: 0 auto
+		font-size: 18px
+		color: $colorWhite
+		line-height: 40px
+	#js-playerPoints, 
+	#js-computerPoints
+		font-size: 30px
+		color: $colorRed
+		font-weight: 900
+		padding: 0
+		background-color: transparent
+	.player
+		font-size: 20px
+		font-weight: 900
+		color: $colorWhite
+		text-transform: uppercase
+	#js-playerResult,
+	#js-computerResult
+		color: $colorBlue
+		font-weight: 700
+	#js-newGameButton
+		padding: 20px
+		font-size: 20px
+		color: $colorWhite
+		background-color: $colorDarkGrey
+		margin-top: 50px
+		border-radius: 5%
+		box-shadow: 3px 6px 12px 2px rgba(51, 51, 51, 0.7)
+		text-transform: uppercase
+		&:hover
+			background-color: $colorRed
+			color: $colorWhite
+
+.gameName
+	text-align: center
+	text-transform: uppercase
+
+h1,h3
+	
+	padding-bottom: 10px
+h1
+	font-family: $secondary-font-family
+	
+	text-transform: uppercase
+h3
+	font-family: $primary-font-family
+	text-align: center
+	margin-bottom: 0
+	padding-bottom: 0
+
+
+
+#js-playerPickElement
+	button
+		height:	100px
+		width: 100px
+		border-radius: 50%
+		box-shadow: 3px 6px 12px 2px rgba(0, 0, 0, 0.7)
+		border-width: 0
+		margin-left: 20px
+		margin-right: 20px
+		padding: 0
+		margin-top: 20px
+		background-color: $colorWhite
+		i
+			font-size: 70px
+			line-height: 90px
+			border-radius: 50%
+			background-color: $colorWhite
+			display: block
+			position: relative
+		&:hover
+			color: $colorWhite
+			i.fa
+				color: $colorWhite
+	
+
+#js-playerPickRock
+	color: $colorDarkGrey
+	i
+		color: $colorDarkGrey
+	&:hover
+		background-color: $colorDarkGrey
+		color: $colorWhite
+	

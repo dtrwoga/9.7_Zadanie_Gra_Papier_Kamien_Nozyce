@@ -1,0 +1,28 @@
+{
+  "name": "9.7_Zadanie_Gra_Papier_Kamien_Nozyce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gruntfile.js",
+  "dependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-imagemin": "^2.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtrwoga/9.7_Zadanie_Gra_Papier_Kamien_Nozyce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dtrwoga/9.7_Zadanie_Gra_Papier_Kamien_Nozyce/issues"
+  },
+  "homepage": "https://github.com/dtrwoga/9.7_Zadanie_Gra_Papier_Kamien_Nozyce#readme"
+}
