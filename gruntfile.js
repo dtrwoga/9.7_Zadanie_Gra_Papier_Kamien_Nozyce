@@ -13,22 +13,6 @@ module.exports = function(grunt) {
   			}
   		}
   	},
-	browserSync: {
-            	default_options: {
-                	bsFiles: {
-                    		src : [
-                        		'css/style.css',
-                        		'indeks.html'
-                    		]
-                	},
-                	options: {
-                    		watchTask: true,
-                    		server: {
-					baseDir: './'
-				}
-                	}
-            	}
-        },
 	watch: {
     		scripts: {
         		files: ['sass/style.sass'],
@@ -40,11 +24,10 @@ module.exports = function(grunt) {
   // Load the plugins tasks
   
   grunt.loadNpmTasks('grunt-sass');
-  grunt.loadNpmTasks('grunt-browser-sync');
   grunt.loadNpmTasks('grunt-contrib-watch');
   
   
   // Default task(s)
 
-  grunt.registerTask('default', ['browserSync', 'sass', 'watch']);
+  grunt.registerTask('default', ['sass', 'watch']);
  };

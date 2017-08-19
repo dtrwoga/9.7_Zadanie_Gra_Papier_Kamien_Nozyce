@@ -1,9 +1,6 @@
 body {
-  background-image: url("imgStart.gif");
-  background-repeat: no-repeat;
   background-color: #dce2ee;
-  text-align: center;
-  background-position: bottom center; }
+  text-align: center; }
 
 /*grid*/
 .row:before,
@@ -11,42 +8,6 @@ body {
   content: "";
   display: table;
   clear: both; }
-
-.col-xs-1 {
-  width: 8.3333333333%; }
-
-.col-xs-2 {
-  width: 16.6666666667%; }
-
-.col-xs-3 {
-  width: 25%; }
-
-.col-xs-4 {
-  width: 33.3333333333%; }
-
-.col-xs-5 {
-  width: 41.6666666667%; }
-
-.col-xs-6 {
-  width: 50%; }
-
-.col-xs-7 {
-  width: 58.3333333333%; }
-
-.col-xs-8 {
-  width: 66.6666666667%; }
-
-.col-xs-9 {
-  width: 75%; }
-
-.col-xs-10 {
-  width: 83.3333333333%; }
-
-.col-xs-11 {
-  width: 91.6666666667%; }
-
-.col-xs-12 {
-  width: 100%; }
 
 [class*="col-"] {
   float: left;
@@ -78,6 +39,9 @@ body {
   font-size: 18px;
   color: #fff;
   line-height: 40px; }
+
+.row img {
+  margin: 0 auto; }
 
 .row #js-playerPoints,
 .row #js-computerPoints {
@@ -116,17 +80,19 @@ body {
   text-transform: uppercase; }
 
 h1, h3 {
-  padding-bottom: 10px; }
+  padding-top: 50px; }
 
 h1 {
   font-family: "Archivo Black", sans-serif;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  padding-bottom: 30px; }
 
 h3 {
   font-family: "Raleway", sans-serif;
   text-align: center;
   margin-bottom: 0;
-  padding-bottom: 0; }
+  display: inline;
+  padding-bottom: 10px; }
 
 #js-playerPickElement button {
   height: 100px;
@@ -134,11 +100,11 @@ h3 {
   border-radius: 50%;
   box-shadow: 3px 6px 12px 2px rgba(0, 0, 0, 0.7);
   border-width: 0;
-  margin-left: 20px;
-  margin-right: 20px;
   padding: 0;
-  margin-top: 20px;
+  margin: 20px;
   background-color: #fff; }
+  #js-playerPickElement button:hover {
+    color: #fff; }
   #js-playerPickElement button i {
     font-size: 70px;
     line-height: 90px;
@@ -146,17 +112,71 @@ h3 {
     background-color: #fff;
     display: block;
     position: relative; }
-  #js-playerPickElement button:hover {
-    color: #fff; }
-    #js-playerPickElement button:hover i.fa {
-      color: #fff; }
+    #js-playerPickElement button i:hover {
+      color: #fff;
+      background-color: #777; }
 
-#js-playerPickRock {
-  color: #333; }
-  #js-playerPickRock i {
-    color: #333; }
-  #js-playerPickRock:hover {
-    background-color: #333;
+#js-playerPickElement #js-playerPick_rock {
+  color: #777;
+  outline: none; }
+  #js-playerPickElement #js-playerPick_rock:hover {
+    background-color: #777;
     color: #fff; }
+  #js-playerPickElement #js-playerPick_rock:hover i.fa {
+    background-color: #777; }
+
+#js-playerPickElement #js-playerPick_paper {
+  color: #5bc0de;
+  outline: none; }
+  #js-playerPickElement #js-playerPick_paper:hover {
+    background-color: #5bc0de;
+    color: #fff; }
+  #js-playerPickElement #js-playerPick_paper:hover i.fa {
+    background-color: #5bc0de; }
+
+#js-playerPickElement #js-playerPick_scissors {
+  color: #d9534f;
+  outline: none; }
+  #js-playerPickElement #js-playerPick_scissors:hover {
+    background-color: #d9534f;
+    color: #fff; }
+  #js-playerPickElement #js-playerPick_scissors:hover i.fa {
+    background-color: #d9534f; }
+
+.modal-body,
+.modal-content,
+.modal-footer {
+  background-color: #dce2ee; }
+
+.modal-content {
+  box-shadow: 3px 6px 12px 2px rgba(0, 0, 0, 0.7); }
+  .modal-content .modal-header {
+    border-bottom: #dce2ee; }
+  .modal-content .modal-title {
+    font-size: 28px;
+    color: #333;
+    font-family: "Raleway", sans-serif; }
+  .modal-content .modal-body {
+    border-bottom: #dce2ee; }
+    .modal-content .modal-body p {
+      font-size: 56px;
+      font-family: "Archivo Black", sans-serif;
+      color: #333;
+      text-transform: uppercase;
+      font-weight: 900; }
+    @media (max-width: 575px) {
+      .modal-content .modal-body #js-modalWinner {
+        font-size: 30px; } }
+    @media (min-width: 576px) and (max-width: 767px) {
+      .modal-content .modal-body #js-modalWinner {
+        font-size: 34px; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      .modal-content .modal-body #js-modalWinner {
+        font-size: 38px; } }
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .modal-content .modal-body #js-modalWinner {
+        font-size: 40px; } }
+  .modal-content .modal-footer {
+    border-top: #dce2ee; }
 
 /*# sourceMappingURL=style.css.map */

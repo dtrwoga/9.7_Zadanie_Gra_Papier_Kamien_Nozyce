@@ -30,24 +30,39 @@ var gameState = 'notStarted',  //started // ended
 
 var newGameElem = document.getElementById('js-newGameElement'),
     pickElem = document.getElementById('js-playerPickElement'),
-    resultsElem = document.getElementById('js-resultsTableElement');
-    
+    resultsElem1 = document.getElementById('js-resultsWindow1'),
+    resultsElem2 = document.getElementById('js-resultsWindow2'),
+    imgStartedElem = document.getElementById('js-imgStarted'),
+    imgNotStartedElem = document.getElementById('js-imgNotStarted');
+ 
 function setGameElements() {
   switch(gameState) {
     case 'started':
         newGameElem.style.display = 'none';
         pickElem.style.display = 'block';
-        resultsElem.style.display = 'block';
+        resultsElem1.style.display = 'block';
+        resultsElem2.style.display = 'block';
+        imgStartedElem.style.display = 'block';
+        imgNotStartedElem.style.display = 'none';
     break;
     case 'ended':
+        imgStartedElem.style.display = 'none';
+        imgStartedElem.style.display = 'none';
+        playerResultElem.innerHTML = 'Player Score'
+        computerResultElem.innerHTML = 'Computer Score';
+        playerPickElem.innerHTML = 'Player selection'
+        computerPickElem.innerHTML = 'Computer selection';
         newGameBtn.innerText = 'Play again';
     case 'notStarted':
     default:
         newGameElem.style.display = 'block';
         pickElem.style.display = 'none';
-        resultsElem.style.display = 'none';
-  }
-}
+        resultsElem1.style.display = 'none';
+        resultsElem2.style.display = 'none';
+        imgStartedElem.style.display = 'none';
+        imgNotStartedElem.style.display = 'block';
+    }
+};
 setGameElements();
 
 //Rozpoczecie gry
@@ -63,6 +78,7 @@ function newGame() {
     gameState = 'started';
     setGameElements();
     playerNameElem.innerHTML = player.name;
+    console.log(playerNameElem)
     setGamePoints(); 
   }
 };
@@ -101,6 +117,8 @@ function checkRoundWinner(playerPick, computerPick) {
 
     if (playerPick == computerPick) {
         winnerIs = 'noone'; // remis
+        playerResultElem.innerHTML = 'Remis!';
+        computerResultElem.innerHTML = 'Remis!';
     } else if (
         (computerPick == 'rock' &&  playerPick == 'scissors') ||
         (computerPick == 'scissors' &&  playerPick == 'paper') ||
@@ -139,15 +157,21 @@ function setGamePoints() {
 //Ogłoszenie wyników i zachęta do nowej gry
 
 function finishedGame() {
-	if (player.score == 10) {
+    
+    if (player.score == 10) {
+        setGamePoints()
         gameState = 'ended';
-		alert(player.name + ' won the game!');
-	} 
-    else if (computer.score == 10){
-        gameState = 'ended';
-		alert('Computer won!');
-	}
-	setGameElements();
-}
+        $("#myModal").modal({show: true});
+        document.getElementById('js-modalWinner').innerHTML = player.name;
+    } 
 
+    else if (computer.score == 10){
+        setGamePoints()
+        gameState = 'ended'; 
+        $("#myModal").modal({show: true});  
+        document.getElementById('js-modalWinner').innerHTML = 'Computer';
+    }
+    setGameElements(); 
+
+};
 
